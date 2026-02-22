@@ -1,0 +1,41 @@
+body {
+  /*1*/
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+}
+
+p {
+  /*2*/
+  color: blue;
+}
+
+.paragraf {
+  /*3*/
+  color: green;
+}
+
+#paragraf {
+  /*4*/
+  color: red;
+}
+
+[title] {
+  /*4*/
+  color: brown;
+}
+
+p:first-of-type {
+  /*5*/
+  color: blueviolet;
+}
+
+P::first-letter {
+  /*6*/
+  color: yellow;
+}
+
+P {
+  /*8*/
+  /* color: aquamarine !important; */
+}
