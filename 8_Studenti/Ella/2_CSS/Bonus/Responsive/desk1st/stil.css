@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: 100vh;
+}
+.flex-container > *,
+section {
+  padding: 10px;
+  flex: 0 24%;
+  background-color: #eee;
+}
+
+header,
+footer {
+  background: #999;
+
+  height: 10vh;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 80vh;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+section {
+  background: #eee;
+}
+
+/* Svi uređaji širine manje od 1024px */
+@media (max-width: 1023px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Svi uređaji širine manje od 768px  */
+@media (max-width: 767px) {
+  section:first-child,
+  section:last-child {
+    grid-column: 1 / span 2;
+  }
+}
+
+/* Svi uređaji širine manje od 480px */
+@media (max-width: 479px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  section:first-child,
+  section:last-child {
+    grid-column: 1;
+  }
+}
