@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern CSS</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --scheme: dark;
+        --color-dark: #333;
+        --color-light: #f5f5f5;
+      }
+
+      body {
+        height: 10vh;
+        background: url("https://picsum.photos/1200/800") center/cover no-repeat;
+      }
+
+      h1 {
+        margin: 0, 5rem;
+        text-align: center;
+        font-size: clamp(2rem, 4vw+1rem, 3.5rem);
+      }
+
+      .blur {
+        margin: 1rem auto;
+        padding: 12px;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .scale {
+        font-size: clamp (1rem, 1rem + 0.5vw, 1.25rem);
+        padding: 10px;
+        border-radius: 12px;
+        color: if(
+          style(--scheme: dark: var(--color-light) ;else: var (--color-dark))
+        );
+        background-color: if(
+          style(--scheme: dark): var(--color-dark) ;else: var(--color-light)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modern CSS</h1>
+    <p>
+      Amet velit esse magna velit aute ipsum do cillum. Voluptate labore magna
+      excepteur veniam sint cupidatat. Dolore ut minim nisi eiusmod officia
+      aliquip eu. Qui excepteur sunt consequat tempor cupidatat elit excepteur
+      laboris sit et laboris magna nulla cupidatat. Labore cupidatat ex sunt
+      laborum nulla officia labore minim veniam consequat cillum. Consectetur
+      tempor enim elit exercitation mollit Lorem irure pariatur nisi amet
+      officia non dolore.
+    </p>
+    <div>
+      <p>Ut amet quis dolor esse cupidatat commodo.</p>
+    </div>
+    <p>
+      Cupidatat nulla tempor mollit eiusmod qui consequat elit ipsum voluptate
+      amet. Minim incididunt culpa anim incididunt veniam consequat deserunt do
+      elit in sint ipsum et minim. Minim esse sint ad anim sunt qui minim duis
+      culpa est. Cillum aute ex reprehenderit velit cillum.
+    </p>
+    <div class="user-name"></div>
+  </body>
+</html>

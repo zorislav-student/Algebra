@@ -1,0 +1,78 @@
+$color1: #eee;
+$color2: #333;
+$color3: #800;
+
+$font1: Verdana, Geneva, Tahoma, sans-serif;
+$font2: Courier, monospace;
+
+body {
+  background-color: $color1;
+  color: $color2;
+  width: 900px;
+}
+
+@mixin odlomci($color5) {
+  p {
+    color: $color5;
+    @content;
+  }
+}
+
+@mixin margin-mix($margin...) {
+  /* ovdje smo zapravo mogli napisati "$margin", umjesto "$margin..." jer mu zapravo ionako predajemo samo jedan argument */
+  margin: $margin;
+}
+
+@mixin border-radius($r: 20px) {
+  /* 20px je defaulta vrijednost, korsiti se kad se pozove mixin bez da mu se preda parametar */
+  border-radius: $r;
+}
+
+@mixin has-content {
+  section {
+    @content;
+  }
+}
+
+@include odlomci(#fff) {
+  /* ova pravila se se ubaciti u dio bloka koji je oznacen sa @content, ako nemamo @content, SCSS kompajler ne zna u koji selektor staviti ta pravila */
+  background-color: $color3;
+  padding: 1em;
+}
+
+header,
+footer,
+section,
+article {
+  border: 2px solid $color2;
+  padding: 1em;
+}
+
+header {
+  @include margin-mix(20px);
+}
+
+section {
+  @include margin-mix(
+    2em auto
+  ); /* ovo je jedan parameter, ali predstavlja niz koji se predaje mixinu kao jedan parametar */
+  width: 80%;
+  article {
+    @include margin-mix(1em);
+    @include border-radius();
+    &:last-child {
+      @include margin-mix(0);
+      @include border-radius(0 30px);
+    }
+  }
+}
+
+@include has-content() {
+  .odlomak {
+    border: 8px dotted $color2;
+  }
+}
+
+footer {
+  @include margin-mix(1em 0 2em 5em);
+}

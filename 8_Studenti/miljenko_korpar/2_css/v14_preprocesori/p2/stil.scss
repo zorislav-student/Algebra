@@ -1,0 +1,70 @@
+$light-grey: #eee;
+$grey: #333;
+$red: #800;
+
+$font1: Tahoma, sans-serif;
+$font2: Courier, monospace;
+
+body {
+    background-color: $light-grey;
+    color: $grey;
+    font-family: $font1;
+}
+
+/* Nesting */
+header {
+    text-align: center;
+
+    h1 {
+        color: $red;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    a {
+        color: #ff6;
+    }
+}
+
+section {
+    h2 {
+        font-family: $font2;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    a {
+        color: $red;
+    }
+
+    article {
+        background-color: $red;
+
+        p {
+            color: $light-grey;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+}
+
+footer {
+  h1 {
+    color: #ff6;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  a {
+    color: #0f0;
+    font-size: 20px;
+  }
+}

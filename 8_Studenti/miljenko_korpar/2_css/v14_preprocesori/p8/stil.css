@@ -1,0 +1,54 @@
+body {
+  background-color: #eee;
+  color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  background-color: #800;
+  height: 30px;
+  margin: 0 0 1em;
+  padding: 0;
+}
+
+/* through je <= 8, to je <8 */
+.row-1 {
+  width: 100%;
+}
+
+/* through je <= 8, to je <8 */
+.row-2 {
+  width: 50%;
+}
+
+/* through je <= 8, to je <8 */
+.row-3 {
+  width: 33.3333333333%;
+}
+
+/* through je <= 8, to je <8 */
+.row-4 {
+  width: 25%;
+}
+
+/* through je <= 8, to je <8 */
+.row-5 {
+  width: 20%;
+}
+
+/* through je <= 8, to je <8 */
+.row-6 {
+  width: 16.6666666667%;
+}
+
+/* through je <= 8, to je <8 */
+.row-7 {
+  width: 14.2857142857%;
+}
+
+/* through je <= 8, to je <8 */
+.row-8 {
+  width: 12.5%;
+}/*# sourceMappingURL=stil.css.map */

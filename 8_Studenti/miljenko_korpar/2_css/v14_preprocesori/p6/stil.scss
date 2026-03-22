@@ -1,0 +1,30 @@
+$light-grey: #eee;
+$grey: #333;
+$red: #800;
+
+$font1: Tahoma, sans-serif;
+$font2: Courier, monospace;
+
+body {
+  background-color: $light-grey;
+  color: $grey;
+  font-family: $font1;
+}
+
+.borders {
+  border: 2px solid $grey;
+}
+
+%spaces {
+  padding: 1em;
+  margin: 1em;
+}
+
+header,
+footer {
+  @extend .borders;
+}
+
+article {
+  @extend %spaces;
+}

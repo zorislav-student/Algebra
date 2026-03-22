@@ -1,0 +1,53 @@
+body {
+  background-color: #eee;
+  color: #333;
+  width: 900px;
+}
+
+p {
+  color: #fff;
+  /* ova pravila se se ubaciti u dio bloka koji je oznacen sa @content, ako nemamo @content, SCSS kompajler ne zna u koji selektor staviti ta pravila */
+  background-color: #800;
+  padding: 1em;
+}
+
+header,
+footer,
+section,
+article {
+  border: 2px solid #333;
+  padding: 1em;
+}
+
+header {
+  /* ovdje smo zapravo mogli napisati "$margin", umjesto "$margin..." jer mu zapravo ionako predajemo samo jedan argument */
+  margin: 20px;
+}
+
+section {
+  /* ovdje smo zapravo mogli napisati "$margin", umjesto "$margin..." jer mu zapravo ionako predajemo samo jedan argument */
+  margin: 2em auto;
+  /* ovo je jedan parameter, ali predstavlja niz koji se predaje mixinu kao jedan parametar */
+  width: 80%;
+}
+section article {
+  /* ovdje smo zapravo mogli napisati "$margin", umjesto "$margin..." jer mu zapravo ionako predajemo samo jedan argument */
+  margin: 1em;
+  /* 20px je defaulta vrijednost, korsiti se kad se pozove mixin bez da mu se preda parametar */
+  border-radius: 20px;
+}
+section article:last-child {
+  /* ovdje smo zapravo mogli napisati "$margin", umjesto "$margin..." jer mu zapravo ionako predajemo samo jedan argument */
+  margin: 0;
+  /* 20px je defaulta vrijednost, korsiti se kad se pozove mixin bez da mu se preda parametar */
+  border-radius: 0 30px;
+}
+
+section .odlomak {
+  border: 8px dotted #333;
+}
+
+footer {
+  /* ovdje smo zapravo mogli napisati "$margin", umjesto "$margin..." jer mu zapravo ionako predajemo samo jedan argument */
+  margin: 1em 0 2em 5em;
+}/*# sourceMappingURL=stil.css.map */

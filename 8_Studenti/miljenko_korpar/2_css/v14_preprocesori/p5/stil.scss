@@ -1,0 +1,85 @@
+$color1: rgb(150, 0, 0);
+$color2: rgb(150, 150, 0);
+
+@mixin animation($str) {
+  animation: #{$str}; /* string interpolation - splitta string po razmaku */
+}
+
+@mixin keyframes($animation-name) {
+  /* @keyframes <labela> - word nakon @keyframes nije naziv pravila nego je labela, pa zato koristimo string interpolation da postavimo labelu */
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin transition($args) {
+  transition: $args;
+}
+
+@mixin lingrad($args...) {
+  //   background-image: linear-gradient($args);
+  // ILI
+  /* primjer kako iz niza argumenata ($args...) dohvatiti pojedini argument */
+  background-image: linear-gradient(
+    nth($args, 1),
+    nth($args, 2),
+    nth($args, 3),
+    nth($args, 4)
+  );
+}
+
+@include keyframes(fade) {
+  /* a mogli smo "fade proslijediti i kao string */
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+div {
+  background-color: $color2;
+  margin: 1em auto;
+  padding: 1em;
+  width: 25%;
+  &:first-child {
+    @include animation("fade 2s ease-in-out infinite");
+  }
+  &:nth-child(2) {
+    @include animation("fade 4s linear 2s infinite");
+  }
+
+  &:nth-child(3) {
+    @include animation("fade 0.5s ease-in infinite");
+  }
+  &:nth-child(4) {
+    @include transition(background-color 5s ease);
+    &:hover {
+      background-color: $color1;
+    }
+  }
+  &:nth-child(5) {
+    @include transition(width 5s ease);
+    &:hover {
+      width: 80%;
+    }
+  }
+  &:nth-child(6) {
+    @include transition(transform 2s ease-out);
+    &:hover {
+      transform: translate(150px, 0);
+    }
+  }
+  &:nth-child(7) {
+    @include lingrad(to right, red, yellow, green);
+  }
+}

@@ -1,0 +1,39 @@
+$color1: #eee;
+$color2: #333;
+$color3: #800;
+
+$font1: Verdana, Geneva, Tahoma, sans-serif;
+$font2: Courier, monospace;
+
+@mixin spacing($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+body {
+  background-color: $color1;
+  color: $color1;
+  font-family: $font1;
+  @include spacing(0, 0);
+}
+
+div {
+  background-color: $color2;
+  @include spacing(0 0 1em, 1em);
+}
+
+$num: 8;
+@while $num > 0 {
+  .row-#{$num} {
+    &::before {
+      content: "#{$num}";
+    }
+  }
+  $num: $num - 1;
+}
+
+// .row-1::before {
+/* before je selektor pseudo-elementa (selektira dio elementa), referencira sadržaj koji se nalazi ISPRED sadržaja elementa */
+/* after je selektor pseudo-elementa (selektira dio elementa), referencira sadržaj koji se nalazi NAKON sadržaja elementa */
+// content: "1";
+// }

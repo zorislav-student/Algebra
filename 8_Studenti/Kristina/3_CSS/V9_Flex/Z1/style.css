@@ -22,6 +22,5 @@ body {
   justify-content: space-between;
 }
 .flex-item {
-  ms-flex-preferred-size: 18px;
   flex-basis: 18vw;
 }
