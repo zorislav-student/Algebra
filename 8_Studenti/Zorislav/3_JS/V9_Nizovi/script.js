@@ -25,22 +25,22 @@ for (var element of names) {
 
 // 4. Napišite naredbu za uklanjanje undefined vrijednosti iz niza.
 
-// for (var i = 0; i < names.length; i++) {
-//   if (!names[i]) names.splice(i, 1);
-// }
+for (var i = 0; i < names.length; i++) {
+  if (!names[i]) names.splice(i, 1);
+}
 
-var noviNiz = names.filter(function (element) {
-  return element !== undefined;
+// var noviNiz = names.filter(function (element) {
+//   return element !== undefined;
+// });
+// console.log(noviNiz);
+
+console.log(names);
+
+// map
+
+var noviNiz = names.map(function (element) {
+  return "Ime: " + element;
 });
 
 console.log(names);
 console.log(noviNiz);
-
-// map
-
-// var noviNiz = names.map(function (element) {
-//   return "Ime: " + element;
-// });
-
-// console.log(names);
-// console.log(noviNiz);
