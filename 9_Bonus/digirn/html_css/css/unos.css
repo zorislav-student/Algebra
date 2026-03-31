@@ -14,7 +14,7 @@ textarea {
 input,
 textarea {
   padding: 4px;
-  border: 1.5px solid var(--primary);
+  border: 2.5px solid var(--primary);
   border-radius: 2px;
   outline: none;
 }
@@ -36,7 +36,7 @@ input:active,
 input:focus,
 textarea:active,
 textarea:focus {
-  border: 2px solid var(--outline);
+  border: 2.5px solid var(--outline);
 }
 
 .container {
@@ -57,4 +57,3 @@ textarea:focus {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-

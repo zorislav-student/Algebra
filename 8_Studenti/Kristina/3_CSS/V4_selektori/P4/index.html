@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selektori atributa</title>
+    <style>
+      body {
+        color: #333;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      [title] {
+        text-decoration: underline solid red;
+      }
+      [title="Prvi odlomak"] {
+        font-weight: bold;
+      }
+      [title*="odlomak"] {
+        color: darkgreen;
+      }
+      [title~="odlomak"] {
+        text-transform: uppercase;
+      }
+      [title^="odlomak"] {
+        font-style: italic;
+      }
+      [title|="odlomak"] {
+        font-family: "Courier New", Courier, monospace;
+      }
+      [title$="odlomak"] {
+        color: darkorange;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 title="Naslov stranice">
+      Anim ad id quis amet ad pariatur laborum tempor mollit dolor consectetur.
+    </h1>
+    <h2>Occaecat aliqua ut officia est mollit quis ex do in et minim.</h2>
+    <h3>Enim magna officia culpa sit.</h3>
+    <h4>Qui ullamco cupidatat irure in qui elit esse est consequat.</h4>
+    <p title="Prvi odlomak">
+      Eiusmod reprehenderit excepteur ex deserunt cupidatat amet labore est
+      dolore. Dolor ex excepteur aute commodo cupidatat adipisicing non esse
+      reprehenderit nisi consectetur mollit. Proident Lorem sunt fugiat sunt
+      consequat. Nostrud ea ullamco tempor dolor nisi labore duis velit elit
+      commodo consequat cupidatat cillum.
+    </p>
+
+    <p title="odlomak 2">
+      Eiusmod reprehenderit excepteur ex deserunt cupidatat amet labore est
+      dolore. Dolor ex excepteur aute commodo cupidatat adipisicing non esse
+      reprehenderit nisi Qui esse eu aliquip ad occaecat est laborum aute enim
+      adipisicing. Cillum aliqua mollit qui culpa enim tempor ullamco
+      reprehenderit cillum. Dolore minim reprehenderit proident commodo. Sunt
+      dolore id labore pariatur eu aute aliquip Lorem enim aliqua.Elit aliqua
+      non nostrud velit velit eu anim incididunt et exercitation nostrud ipsum
+      id sunt. Ut non dolor et fugiat pariatur magna ipsum esse proident commodo
+      ipsum. Pariatur fugiat irure nisi non est minim ad esse. Minim officia et
+      exercitation reprehenderit deserunt commodo eu commodo dolore eu ad
+      voluptate excepteur reprehenderit. Excepteur irure ut labore qui culpa
+      pariatur deserunt. Consequat deserunt incididunt labore pariatur sit
+      incididunt.consectetur mollit. Proident Lorem sunt fugiat sunt consequat.
+      Nostrud ea ullamco tempor dolor nisi labore duis velit elit commodo
+      consequat cupidatat cillum.
+    </p>
+
+    <p odlomak-moj>
+      Eiusmod reprehenderit excepteur ex deserunt cupidatat amet labore est
+      dolore. Dolor ex excepteur aute commodo cupidatat adipisicing non esse
+      reprehenderit nisi consectetur mollit. Proident Lorem sunt fugiat sunt
+      consequat. Nostrud ea ullamco tempor dolor nisi labore duis velit elit
+      commodo consequat cupidatat cillum.
+    </p>
+
+    <p title="predzadnji.odlomak">
+      Eiusmod reprehenderit excepteur ex deserunt cupidatat amet labore est
+      dolore. Dolor ex excepteur aute commodo cupidatat adipisicing non esse
+      reprehenderit nisi consectetur mollit. Proident Lorem sunt fugiat sunt
+      consequat. Nostrud ea ullamco tempor dolor nisi labore duis velit elit
+      commodo consequat cupidatat cillum.
+    </p>
+    <p title="odlomak">
+      Eiusmod reprehenderit excepteur ex deserunt cupidatat amet labore est
+      dolore. Dolor ex excepteur aute commodo cupidatat adipisicing non esse
+      reprehenderit nisi consectetur mollit. Proident Lorem sunt fugiat sunt
+      consequat. Nostrud ea uEu occaecat elit cupidatat ut reprehenderit. Ex
+      aute consectetur incididunt duis. Do enim mollit veniam adipisicing
+      nostrud eu dolore enim ipsum reprehenderit minim.llamco tempor dolor nisi
+      labore duis velit elit commodo consequat cupidatat cillum.
+    </p>
+  </body>
+</html>
