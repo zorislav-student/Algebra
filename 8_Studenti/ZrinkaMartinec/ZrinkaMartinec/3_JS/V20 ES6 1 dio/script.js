@@ -1,15 +1,12 @@
-// 1.
+//1
 "use strict";
-a = 78;
-var b = 034;
-
+var a = 78;
+var b = 34;
 //delete a;
-//delete window.b;
-
-
+delete window.b;
 myObject = { property1: 1, property2: 2, property1: 1 };
 
-// 2.const
+// 2.
 const users = [
   { name: "Fabio", surname: "Biondi" },
   { name: "Mario", surname: "Rossi" },
@@ -17,10 +14,7 @@ const users = [
 
 const user = { name: "Lorenzo", surname: "Verdi" };
 
-
-const allUsers = [...users, user];
-console.log(allUsers);
-
+//1
 
 // 3.
 for (let i = 0; i < 10; i++) {
