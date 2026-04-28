@@ -6,42 +6,20 @@ section h1 {
   text-align: center;
 }
 
-textarea {
-  display: block;
-  font-family: inherit;
-}
-
 input,
 textarea {
   padding: 4px;
   border: 1.5px solid var(--primary);
   border-radius: 2px;
   outline: none;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  background-color: var(--primary);
-  color: var(--onPrimary);
-  border: 1px solid var(--primary);
-  border-radius: 4px;
-  outline: none;
-}
-
-button:hover {
-  color: var(--inversePrimary);
-}
-
-#header-container {
-  display: flex;
-  align-items: center;
+  font: inherit;
 }
 
 input:active,
 input:focus,
 textarea:active,
 textarea:focus {
-  border: 2px solid var(--outline);
+  border: 1.5px solid var(--outline);
 }
 
 .container {
@@ -53,8 +31,17 @@ textarea:focus {
   margin-bottom: 1rem;
 }
 
-.container p {
-  display: inline-block;
+button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  outline: none;
+}
+
+button:hover {
+  color: var(--inverse-primary);
 }
 
 .button-container {
@@ -62,5 +49,3 @@ textarea:focus {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
-

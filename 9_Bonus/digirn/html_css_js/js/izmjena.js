@@ -1,18 +1,16 @@
-
 // Nakon ucitavanja dokumenta startaj funkciju main
 document.addEventListener("DOMContentLoaded", main);
 
 // Glavna funkcija skripte
 function main() {
-
   // Dohvati id naloga
   const urlParams = new URLSearchParams(window.location.search);
   const odabraniNalogId = urlParams.get("id");
 
-   // Ucitaj naloge iz localStorage
+  // Ucitaj naloge iz localStorage
   const nalozi = JSON.parse(localStorage.getItem("tmpNalozi")) || [];
 
-   // Varijable elemenata
+  // Varijable elemenata
   let okButtonEl = document.getElementById("ok");
   let cancelButtonEl = document.getElementById("cancel");
   let brojNalogaEl = document.getElementById("broj_naloga");
@@ -29,11 +27,11 @@ function main() {
   let naslovEl = document.getElementById("naslov");
   let opisEl = document.getElementById("opis");
 
-    // Event listeneri
+  // Event listeneri
   okButtonEl.addEventListener("click", handleOkClick);
   cancelButtonEl.addEventListener("click", handleCancelClick);
 
-   // U nizu naloga pronadji odabrani
+  // U nizu naloga pronadji odabrani
   const odabraniNalog = nalozi.find((nalog) => nalog.id === odabraniNalogId);
 
   // Popuni elemente odabranim nalogom
@@ -56,7 +54,6 @@ function main() {
     event.preventDefault();
     const answer = window.confirm("Spremi izmjene?");
     if (answer) {
-
       // Popuni nalog novim vrijednostima
       odabraniNalog.brojNaloga = brojNalogaEl.value;
       odabraniNalog.brojNarudzbe = brojNarudzbeEl.value;
@@ -72,7 +69,7 @@ function main() {
       odabraniNalog.naslov = naslovEl.value;
       odabraniNalog.opis = opisEl.value;
 
-       // Zapisi niz naloga u localStorage
+      // Zapisi niz naloga u localStorage
       localStorage.setItem("tmpNalozi", JSON.stringify(nalozi));
       window.open(`prikaz.html?id=${odabraniNalogId}`, "_self");
     }

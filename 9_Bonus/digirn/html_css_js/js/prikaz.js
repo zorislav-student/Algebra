@@ -3,20 +3,18 @@ import { toggleNav } from "./shared/functions.js";
 // Nakon ucitavanja dokumenta startaj funkciju main
 document.addEventListener("DOMContentLoaded", main);
 
-
 // Glavna funkcija skripte
 function main() {
-
   // Dohvati id naloga
   const urlParams = new URLSearchParams(window.location.search);
   const odabraniNalogId = urlParams.get("id");
-  
+
   // Ucitaj naloge iz localStorage
   const nalozi = JSON.parse(localStorage.getItem("tmpNalozi")) || [];
 
   // Varijable elemenata
   let hamburgerEl = document.getElementById("hamburger-icon");
-  let asideEl = document.getElementsByTagName("aside")[0];
+  let navEl = document.getElementsByTagName("nav")[0];
   let aIzmjenaEl = document.getElementById("aIzmjena");
   let aIzmjenaSmEl = document.getElementById("aIzmjena-small");
   let aBrisanjeEl = document.getElementById("aBrisanje");
@@ -37,19 +35,16 @@ function main() {
 
   // Event listeneri
   document.addEventListener("click", (event) => {
-    const asideElDisplay = window.getComputedStyle(asideEl).display;
-    if(!event.target.closest("div") && asideElDisplay === "block") toggleNav(hamburgerEl, asideEl);
+    const navElDisplay = window.getComputedStyle(navEl).display;
+    if (!event.target.closest("div") && navElDisplay === "block")
+      toggleNav(hamburgerEl, navEl);
   });
 
-  hamburgerEl.addEventListener("click", () => toggleNav(hamburgerEl, asideEl));
+  hamburgerEl.addEventListener("click", () => toggleNav(hamburgerEl, navEl));
   aIzmjenaEl.addEventListener("click", () => {
     window.open(`izmjena.html?id=${odabraniNalogId}`, "_self");
   });
-  aIzmjenaSmEl.addEventListener("click", () => {
-    window.open(`izmjena.html?id=${odabraniNalogId}`, "_self");
-  });
   aBrisanjeEl.addEventListener("click", obrisiNalog);
-  aBrisanjeSmEl.addEventListener("click", obrisiNalog);
 
   // U nizu naloga pronadji odabrani
   const odabraniNalog = nalozi.find((nalog) => nalog.id === odabraniNalogId);
