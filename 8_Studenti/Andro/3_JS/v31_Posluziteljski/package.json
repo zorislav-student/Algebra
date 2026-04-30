@@ -1,0 +1,16 @@
+{
+  "name": "androvj31",
+  "version": "1.0.0",
+  "description": "Demo npm modul",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andro",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "lodash": "^4.18.1"
+  }
+}
