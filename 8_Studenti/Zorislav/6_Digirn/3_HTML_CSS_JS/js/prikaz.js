@@ -19,8 +19,13 @@ function main() {
   let vrijemeZavrsetkaEl = document.getElementById("vrijeme-zavrsetka");
   let naslovEl = document.getElementById("naslov");
   let opisEl = document.getElementById("opis");
+  let aIzmjenaEl = document.getElementById("izmjena");
+  let aBrisanjeEl = document.getElementById("brisanje");
 
   const nalozi = JSON.parse(localStorage.getItem("tmpNalozi")) || [];
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const odabraniNalogId = urlParams.get("id");
 
   document.addEventListener("click", (event) => {
     let navElDisplay = window.getComputedStyle(navEl).display;
@@ -32,8 +37,21 @@ function main() {
 
   hamburgerEl.addEventListener("click", () => toggleNav(hamburgerEl, navEl));
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const odabraniNalogId = urlParams.get("id");
+  aIzmjenaEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.open(`izmjena.html?id=${odabraniNalogId}`, "_self");
+  });
+
+  aBrisanjeEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    const answer = window.confirm("Obriši nalog?");
+    if (answer) {
+      const nalogIndex = nalozi.indexOf(odabraniNalog);
+      nalozi.splice(nalogIndex, 1);
+      localStorage.setItem("tmpNalozi", JSON.stringify(nalozi));
+      window.open("lista.html", "_self");
+    }
+  });
 
   const odabraniNalog = nalozi.find((nalog) => nalog.id === odabraniNalogId);
 
