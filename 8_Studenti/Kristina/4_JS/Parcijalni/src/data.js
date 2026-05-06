@@ -1,6 +1,6 @@
-export const fetchData = async (searchTerm) => {
+export const fetchData = async (searchInput) => {
   try {
-    const url = `https://itunes.apple.com/search?term=${searchTerm}&media=music`;
+    const url = `https://itunes.apple.com/search?term=${searchInput}&media=music`;
     console.log(url);
     const response = await fetch(url);
     const data = await response.json();
@@ -12,6 +12,7 @@ export const fetchData = async (searchTerm) => {
     });
     return returnData;
   } catch (error) {
+    console.log("Error fetching data:", error);
     return [];
   }
 };
