@@ -10,7 +10,6 @@ $(document).ready(function () {
 
   function afterRender() {
     $("table th").css("color", "darkBlue");
-    addStripes();
 
     $("table tr").on("mouseenter", (event) => {
       $(event.currentTarget).css("background-color", "yellow");
@@ -19,6 +18,7 @@ $(document).ready(function () {
       $(event.currentTarget).removeAttr("style");
     });
 
+    addStripes();
     setTimeout(function () {
       const hideElements = $("table td a:contains(`p`)").filter(function () {
         return this.innerHTML.indexOf("p") == 0;
@@ -28,7 +28,7 @@ $(document).ready(function () {
       addStripes();
 
       $("<div><div>")
-        .insertAfter("#hb-template")
+        .insertAfter($("#hb-template"))
         .text("Skriveno: " + hideElements.length);
     }, 2000);
   }
