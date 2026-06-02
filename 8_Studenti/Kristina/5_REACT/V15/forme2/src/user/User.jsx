@@ -2,7 +2,7 @@ export default function Users({ ime, godine, onNameChange,onDeleteUser}) {
   return (
     <>
       {" "}
-      <p onClick={null}>
+      <p onClick={onDeleteUser}>
         Pozdrav moje ime je {ime} i imam {godine} godina
       </p>
       <input type="text" value={ime} onChange={onNameChange} />
