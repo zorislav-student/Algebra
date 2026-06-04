@@ -1,6 +1,6 @@
 import React from "react";
 
-class Newuser extends React.Component {
+class NewUser extends React.Component {
   state = {
     name: "",
     age: 0,
@@ -24,11 +24,11 @@ class Newuser extends React.Component {
   };
 
   render() {
+    const { name, age } = this.state;
     return (
       <form onSubmit={this.userSubmitHandler}>
         <label>
           Ime:
-          // eslint-disable-next-line no-restricted-globals
           <input type="text" value={name} onChange={this.nameChangeHandler} />
         </label>
         <label>

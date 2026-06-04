@@ -3,12 +3,15 @@ import React from "react";
 import { User, NewUser } from "./user";
 
 class App extends React.Component {
-  state = {
+  /* state = {
     users: [
       { id: 1, name: "Ivan", years: 30 },
       { id: 2, name: "Marko", years: 25 },
       { id: 3, name: "Ana", years: 25 },
     ],
+  };`*/
+  state = {
+    users: [],
   };
 
   btnClickHandler = () => {
@@ -37,20 +40,20 @@ class App extends React.Component {
     this.setState({ users: newUsers });
   };
 
-  deleteUserHandler(index)=>{
-const{users}= this.setState;
-const NewUsers= [...users];
-newUsers
+  deleteUserHandler = (index) => {
+    const { users } = this.state;
+    const newUsers = [...users];
+    newUsers.splice(index, 1);
+    this.setState({ users: newUsers });
+  };
 
-this.setState({users:NewUsers})
-
-  }
   render() {
     const { users } = this.state;
     return (
       <div className="App">
         <h1>React aplikacija</h1>
         <p>ovo zaista radi</p>
+        <button onClick={this.btnClickHandler}>Promjena godina</button>
         <ul>
           {users.map((user, index) => (
             <li key={user.id}>
@@ -58,11 +61,12 @@ this.setState({users:NewUsers})
                 ime={user.name}
                 godine={user.years}
                 onNameChange={(event) => this.nameChangeHandler(event, index)}
-                onDeleteUser={this.deleteUserHandler}
+                onDeleteUser={() => this.deleteUserHandler(index)}
               />
             </li>
           ))}
         </ul>
+        <hr />
         <NewUser onAddUser={this.addUserHandler} />
       </div>
     );
