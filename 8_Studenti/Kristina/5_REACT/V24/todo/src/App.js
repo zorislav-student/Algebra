@@ -52,12 +52,12 @@ class App extends React.Component {
     const { todos } = this.state;
     const newTodos = todos.filter((todo) => !todo.completed);
     this.setState({ todos: newTodos });
-
-    handleVisibilityChange(){
-this.setState({visibility:newVisibility});
-
-    };
   }
+
+  handleVisibilityChange(newVisibility) {
+    this.setState({ visibility: newVisibility });
+  }
+
   getVisibleTodos() {
     const { todos, visibility } = this.state;
 
@@ -71,6 +71,7 @@ this.setState({visibility:newVisibility});
 
     return todos.filter((todo) => !todo.completed);
   }
+
   render() {
     const { todos, visibility } = this.state;
 
@@ -79,7 +80,10 @@ this.setState({visibility:newVisibility});
     return (
       <div className="app">
         <h1 className="header">My tasks</h1>
-        <VisibilityToolbar visibilityType={this.state.visibility} onVisibilityChange={this.handleVisibilityChangethi(bind)} />
+        <VisibilityToolbar
+          visibilityType={visibility}
+          onVisibilityChange={this.handleVisibilityChange.bind(this)}
+        />
         <div className="todo-container">
           <AddTodoForm addTodo={this.handleAddTodo.bind(this)} />
           <TodoList
