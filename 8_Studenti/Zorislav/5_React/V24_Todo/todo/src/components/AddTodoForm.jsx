@@ -32,6 +32,7 @@ class AddTodoForm extends React.Component {
     return (
       <InputGroup size="lg">
         <FormControl
+          className="f-control"
           value={newItem}
           onChange={this.handleChange.bind(this)}
           placeholder="Add Todo"
