@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { RESET } from "../store/redux-store";
 
 export default function MojaKomponenta1() {
   const brojac = useSelector((skl) => skl.counter);
