@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>v15 - gulp</title>
+<body>
+    
+    <script id="hb-template" type="text/x-handlebars-template">
+        <table class={{tableClass}}>
+            <tr>
+                <th class="d-sm-table-cell d-none">#</th>
+                <th class="d-table-cell">Ime</th>
+                <th class="d-sm-table-cell d-none">Priorodno stanište</th>
+                <th class="d-sm-table-cell d-none">Brzina rasta</th>
+            </tr>
+            {{#each pokemon}}
+            <tr>
+                <td class="d-sm-table-cell d-none">{{@index}}</td>
+                <td class="d-table-cell"><a data-bs-trigger="hover" data-bs-toggle="popover" data-bs-title="{{name}}" data-bs-content={{url}} href="{{url}}">{{name}}</a></td>
+                <td class="d-sm-table-cell d-none">{{habitat}}</td>
+                <td class="d-sm-table-cell d-none">{{growth_rate}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </script>
+    <div id="hb-result"></div>
+    <script src="myscripts.js"></script>
+</body>
+</html>
