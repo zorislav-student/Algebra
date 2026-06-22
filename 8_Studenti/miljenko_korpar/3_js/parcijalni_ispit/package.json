@@ -1,0 +1,26 @@
+{
+  "name": "itunes-song-search",
+  "version": "1.0.0",
+  "description": "Rjesenje parcijalnog",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./build/generate-index-html.js dev",
+    "build:dev": "node ./build/generate-index-html.js dev",
+    "build:prod": "node ./build/build-prod.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.1",
+    "uglify": "^0.1.5"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
