@@ -1,6 +1,6 @@
 import { config } from '../config/config-provider.js'
 
-export async function getSearchResult(searchTerm) {
+async function getSearchResult(searchTerm) {
     try {
         const response = await fetch(`${config.itunesApi.baseUrl}${config.itunesApi.searchEndpoint}?term=${searchTerm}&media=music`)
         if (!response.ok) {
