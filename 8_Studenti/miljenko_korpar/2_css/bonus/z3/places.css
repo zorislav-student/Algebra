@@ -1,0 +1,85 @@
+header {
+    position: static;
+    background: rgb(68, 68, 68);
+}
+
+header > nav a {
+    color: rgb(183, 230, 235);
+}
+
+header > nav a:hover {
+    background-color: rgb(183, 230, 235);
+}
+
+header .page-logo {
+    color: rgb(183, 230, 235);
+}
+
+main {
+    background: rgb(68, 68, 68);
+}
+
+.desinations-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 0 16%;
+
+    padding-bottom: 3rem;
+}
+
+.destination {
+    display: flex;
+
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.destination:nth-of-type(3) {
+    grid-column: 1 / span 2;
+}
+
+.destination img {
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.destination:nth-of-type(3) img {
+    width: 24.75%;
+}
+
+.destination-info {
+    display: flex;
+    flex-direction: column;
+
+    background: rgb(255, 255, 255);
+    padding: 1.5rem;
+
+    color: rgb(68, 68, 68);
+}
+
+.destination-info p {
+    margin: 1rem 0;
+}
+
+.explore-container {
+    flex-grow: 1;
+    position: relative; /* koristi se samo zato jer na child elementu primjenjujemo postion: absolute */
+}
+
+.explore-container a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 0.3rem;
+
+    text-decoration: none;
+    color: rgb(22, 211, 228);
+}
+
+.explore-container a:hover {
+    background-color: rgb(235, 253, 255);
+    border-radius: 5px;
+}
