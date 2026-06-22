@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced CSS</title>
+    <style>
+      /* CSS reset / normalizacijska pravila (resetira user-agent stylesheet)*/
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* obicno sluzi za definiciju CSS customer propertisa */
+      :root {
+        --scheme: dark;
+        --color-dark: #333;
+        --color-light: #f5f5f5;
+      }
+
+      body {
+        height: 100vh;
+        background: url("https://picsum.photos/1200/800") center/cover no-repeat;
+      }
+
+      h1 {
+        margin: 0rem;
+        text-align: center;
+        /* clamp(min-height, wanted-hight, max-height) */
+        font-size: clamp(2rem, 1rem + 4vw, 3.5rem);
+      }
+
+      .blur {
+        margin: 1rem auto;
+        padding: 10px;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px); /* 10px je razina zamucenja */
+        --webkit-backdrop-filter: blur(
+          10px
+        ); /* ovo je zapravo vendor prefix, to je vendor CSS property koji nije dio standardnog CSS-a; jos uvijek se preporuca da se stavi i vendor prefix za taj CSS property */
+      }
+
+      .scale {
+        font-size: clamp(1rem, 1rem + 0.5vw, 1.25rem);
+        padding: 10px;
+        border-radius: 12px;
+        color: if(
+          style(--scheme: dark): var(--color-light) ; else: var(--color-dark)
+        );
+        background-color: if(
+          style(--scheme: dark): var(--color-dark) ; else: var(--color-light)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Advanced CSS</h1>
+    <p class="scale">
+      Ex et occaecat ullamco esse dolore deserunt reprehenderit cillum consequat
+      occaecat non. Cupidatat labore velit laboris do ullamco nulla do
+      voluptate. Adipisicing voluptate officia esse cupidatat ea et nostrud
+      Lorem deserunt voluptate elit occaecat reprehenderit.
+    </p>
+    <div class="blur">
+      <p>
+        Pariatur duis est Lorem do elit commodo tempor consectetur irure labore.
+      </p>
+    </div>
+    <p>
+      Quis enim qui cupidatat laboris anim occaecat eiusmod quis occaecat elit
+      do. Ex voluptate sint eiusmod qui esse sint quis voluptate culpa laborum
+      commodo aliqua. Exercitation ea ullamco Lorem aliqua dolore.
+    </p>
+  </body>
+</html>

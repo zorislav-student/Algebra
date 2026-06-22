@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* ova tri selektora se cesto mogu vidjeti kod CSS reset pravila */
+/* da bismo obuhvatili i sadržaj ispred i iza "glavnog" sadržaja elementa, moramo koristiti ::before i ::after  */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
