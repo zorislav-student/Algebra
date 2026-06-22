@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>V11_Objekti Bonus</title>
+    </head>
+
+    <body>
+        <script>
+            const osoba = {
+                ime: "Ivan",
+                prezime: "Horvat",
+                toJSON: function () {
+                    return `{"punoIme": "${this.ime} ${this.prezime}"}`;
+                },
+                toString: function () {
+                    return this.ime + " | " + this.prezime;
+                }
+            }
+
+            console.log("Ime is enumerable:", osoba.propertyIsEnumerable("ime"));
+            console.log("Preziem is enumerable:", osoba.propertyIsEnumerable("prezime"));
+            console.log("Object key num:", Object.keys(osoba).length);
+
+            const datum = new Date();
+            console.log(datum.toString());
+            console.log(datum.toLocaleString());
+
+            console.log(osoba);
+            console.log(JSON.stringify(osoba))
+            console.log(osoba.toString()) // Ivan | Horvat
+            
+            const adresa = '{"ulica":"Ilica", "broj":21, "grad":"Zagreb"}'
+            console.log(adresa)
+            console.log(JSON.parse(adresa))
+            const novaAdresa = JSON.parse(adresa)
+            console.log(novaAdresa.ulica)
+
+            const tekst = "Ovo je primjer teksta";
+            const re = new RegExp("primjer");
+            // const re = /primjer/; // regex alternativa
+
+            console.log(tekst);
+            console.log(tekst.replace(re, "nastavak"));
+        </script>
+    </body>
+</html>

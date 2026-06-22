@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind</title>
+    <script type="text/javascript">
+        var myObject = {
+            num: 2
+        }
+
+        function addTransient(a) {
+            return this.num + a;
+        }
+
+        function add(a) {
+            this.num += a;
+        }
+
+        console.log("Bind example: " + addTransient.bind(myObject, 3)()) // bind kreira novu funkciju (novi objekt jer je funkcija u JS-u objekt) gdje this unutar funkcije pointa na myObject
+        // bind() metoda zapravo radi kopiju funkcije nad kojom se poziva, koja onda zauzima dodatnu memoriju
+
+        // add.bind(myObject, 4)()
+        // console.log(myObject.num) // 6 
+
+        console.log("Call example: " + addTransient.call(myObject, 5)) // ista stvar kao i bind, ali se ne kreira kopija funkcije, nego se poziva postojeca funkcija kojoj se speicificira vrijednost this pointera
+        console.log("Apply example: " + addTransient.apply(myObject, [5])) // isto kao i call, ali se argumenti prosljeduju kao niz
+    </script>
+</head>
+    <body>
+    </body>
+</html>
