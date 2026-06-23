@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: white;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -12,9 +14,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-li {
-  list-style: none;
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,7 +23,6 @@ li {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
