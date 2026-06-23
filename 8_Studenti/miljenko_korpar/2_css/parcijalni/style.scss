@@ -1,0 +1,76 @@
+@import 'base/reset';
+@import 'base/colors';
+@import 'abstracts/ṃixins';
+
+$sun-diameter: 14vmax;
+$top-element-margin: 5vh;
+
+body {
+    background: url("./img/back.jpg") no-repeat center/cover fixed;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+footer {
+    position: fixed;
+    bottom: 5vh;
+
+    width: 100%;
+    text-align: center;
+
+    p {
+        font-size: 3.5vw;
+        font-style: italic;
+        color: $font-color;
+    }
+}
+
+.sun {
+    position: absolute;
+    left: calc(50vw - $sun-diameter/2);
+    top: calc(60vh - $sun-diameter/2);
+
+    background-color: $sun-color;
+    width: $sun-diameter;
+    height: $sun-diameter;
+    border-radius: 50%;
+    box-shadow: $sun-shadow-color 0 0 50px;
+    
+    z-index: -1;
+
+    @include sun-rising-animation($top-element-margin)
+}
+
+.cloud-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    margin-top: $top-element-margin;
+}
+
+.cloud {
+    width: 30%;
+    position: relative;
+
+    @include media-query("medium-screen-width") {
+        width: 45%;
+    }
+}
+
+.cloud.left {
+    @include vertically-moving-cloud-animation(1.1s);
+
+    @include media-query("small-screen-width") {
+        display: none;
+    }
+}
+.cloud.center {
+    @include vertically-moving-cloud-animation(2.7s);
+}
+.cloud.right {
+    @include vertically-moving-cloud-animation(3.9s); 
+
+    @include media-query("small-screen-width") {
+        display: none;
+    }
+}

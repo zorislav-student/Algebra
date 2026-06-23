@@ -1,0 +1,36 @@
+$breakpoints: (
+    "small-screen-width": 479px,
+    "medium-screen-width": 767px
+);
+
+@mixin media-query($width) {
+    @if map_has_key($breakpoints, $width) {
+        $width-in-pixels: map_get($breakpoints, $width);
+        @media (max-width: $width-in-pixels) {
+            @content;
+        }
+    }
+}
+
+@mixin vertically-moving-cloud-animation($delay) {
+    animation: vertically-moving-cloud 3.9s $delay ease-in-out alternate infinite backwards;
+
+    @keyframes vertically-moving-cloud {
+        0% {
+            top: 4vh;
+        }
+        100% {
+            top: -4vh;
+        }
+    }
+}
+
+@mixin sun-rising-animation($top-element-margin) {
+    animation: sun-rising 3.6s linear forwards;
+
+    @keyframes sun-rising {
+        to {
+            top: $top-element-margin;
+        }
+    }
+}
