@@ -1,0 +1,117 @@
+:root {
+    --body-border-color: rgb(220, 220, 220);
+    --body-light-blue-color: rgb(122, 193, 231);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Satoshi', 'Inter', sans-serif;
+    color: rgb(60, 60, 60);
+}
+
+body {
+    background-color: rgb(251, 251, 253);
+}
+
+header {
+    background-color: white;
+    padding: 1rem 0;
+
+    display: flex;
+    justify-content: center;
+    column-gap: 4rem;
+
+    box-shadow: 0px 1px 2px  rgb(230, 230, 230);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.header-item {
+    align-self: center;
+}
+
+main {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+input {
+    padding: 1rem;
+    margin-bottom: 4rem;
+
+    width: 30%;
+    min-width: 15rem;
+
+    border: 1px solid var(--body-border-color);
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px var(--body-light-blue-color);
+
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(60, 60, 60)
+}
+
+input:placeholder-shown {
+    color:  rgb(40, 40, 40);
+}
+
+input:focus {
+    outline: none;
+}
+
+.no-songs-info {
+    font-size: 1.5rem;
+}
+
+.loader {
+  border: 16px solid rgb(243, 243, 243);
+  border-top: 16px solid var(--body-light-blue-color);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+table {
+    margin: 0 auto;
+    width: 50%;
+
+    border: 1px solid var(--body-border-color);
+    border-radius: 2px;
+
+    background-color: white;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 0.5rem;
+    width: 50%;
+}
+
+thead th, td {
+    border-bottom: 1px solid var(--body-border-color);
+}
+
+th:first-child, td:first-child {
+    border-right: 1px solid var(--body-border-color);
+}
+
+@media screen and (max-width: 1024px) {
+    table {
+        width: 80%;
+    }
+}
