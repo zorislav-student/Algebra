@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    text-align: center;
+    background-color: rgb(245, 245, 245); 
+}
+
+header {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+h1 {
+    margin-bottom: 3rem;
+    
+    font-size: 5rem;
+    color: rgb(140, 140, 141);
+}
+
+.menu {
+    font-size: 0; /*hack da maknemo defaultnu razmake između buttona koje stavi browser*/
+    margin-bottom: 2rem;
+}
+
+.menu-button {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+
+    border: 2px solid rgb(51, 54, 64);
+    
+    cursor: pointer;
+}
+
+.menu-button:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.menu-button:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.menu-button:not(:last-of-type) {
+    border-right: none;
+}
+
+.menu-button:disabled {
+    background-color: rgb(51, 54, 64);
+    color: rgb(200, 200, 200);
+
+    cursor: default;
+    outline: 4px solid rgb(180, 180, 180, 0.8);
+
+    position: relative;
+    z-index: 1;
+}
+
+.input-and-overview-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input-and-overview {
+    background-color: white;
+    border: 1px solid rgb(204, 207, 204);
+    border-radius: 8px;
+
+    box-shadow: 1px 1px 6px rgb(201, 175, 193), -1px -1px 6px rgb(201, 175, 190);
+
+    font-weight: 600;
+}
+
+.flex-container {
+    display: flex;
+
+    color: rgb(118, 122 green,129 blue);
+    border-radius: inherit;
+}
+
+input {
+    flex: 0 0 90%;
+    
+    height: 3rem;
+    padding: 1rem;
+
+    border: 1px solid rgb(204, 207, 204);
+    border-radius: 4px 0 0 4px;
+
+    color: inherit;
+    background-color: inherit;
+
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+input:focus {
+    outline: none;
+}
+
+.add-button {
+    flex: 0 0 10%;
+    
+    border: 1px solid rgb(131, 136, 147);
+    border-radius: 0 4px 4px 0;
+
+    color: inherit;
+    background-color: inherit;
+    
+    font-size: inherit;
+    font-weight: inherit;
+
+    cursor: pointer;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+td:first-child {
+    width: 10%;
+}
+
+td:nth-child(2) {
+    width: 80%;
+    text-align: left;
+}
+
+td:nth-child(3) {
+    width: 10%;
+}
+
+input[type="checkbox"] {
+    border-color: rgb(131, 136, 147);
+}
+
+.remove-button {
+    display:block;
+    
+    padding: 1rem;
+    width: 100%;
+
+    border: none;
+    background-color: inherit;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    cursor: pointer;
+}
+
+.clear-completed-container {
+    padding: 1rem 0 1rem 1rem;
+    text-align: right;
+}
+
+.clear-completed-tasks-btn {
+    border: none;
+    margin-right: 0.5rem;
+
+    background-color: inherit;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .input-and-overview-container {
+        width: 70%;
+    }
+}

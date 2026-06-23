@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VJ - Closure</title>
+    <script>
+        var globalVar = 5;
+
+        var outerFunc = (function() {
+            var localVar = 10;
+
+            return {
+                get: function() {
+                    return localVar;
+                },
+                set: function(newValue) {
+                    localVar = newValue; 
+                }
+            }
+        })();
+
+        console.log(outerFunc.localVar);
+        console.log(outerFunc.get());
+        outerFunc.set(20)
+        console.log(outerFunc.get());
+    </script>
+</head>
+<body>
+</body>
+</html>
