@@ -11,3 +11,79 @@
   background-color: #262626;
   color: white;
 }
+
+input {
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid lightcoral;
+  flex-grow: 1;
+}
+
+.send-button {
+  padding: 5px 20px;
+  font-size: 16px;
+  background-color: lightcoral;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+.input-container {
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+.message {
+  display: flex;
+  margin-top: 30px;
+}
+
+.message-content {
+  display: inline-block;
+}
+
+.message > .avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px 20px;
+}
+
+.message-content > .username {
+  display: block;
+  color: gray;
+  font-size: 17px;
+  padding-bottom: 4px;
+}
+
+.message-content > .text {
+  padding: 10px 16px;
+  max-width: 400px;
+  margin: 0;
+  font-size: 20px;
+  background-color: cornflowerblue;
+  color: white;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.message.current {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.current > .message-content .text {
+  background-color: lightcoral;
+}
